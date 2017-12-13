@@ -1,5 +1,5 @@
 #
-huswif<-source("file:/Users/lucasbraun/Google Drive/Grad School/2017 Applied Mathematics/RSPCMA/Data/chap1huswif.dat")$value
+huswif<-source("/Users/lucasbraun/Google Drive/Grad School/2017 Applied Mathematics/RSPCMA/Data/chap1huswif.dat")$value
 #
 #
 mean(huswif)
@@ -15,8 +15,13 @@ dis.matrix<-dist2full(dis)
 round(dis.matrix,digits=2)
 #
 std<-sd(huswif)
+# Error: (list) object cannot be coerced to type 'double'
+# Solutions:
+std<-sd(data.matrix(huswif))
+std=c(sd(huswif[,1]), sd(huswif[,2]), sd(huswif[,3]), sd(huswif[,4]), sd(huswif[,5]))
 #
 #
+# sweep usage: sweep(x, MARGIN, STATS, FUN = "-", check.margin = TRUE, …)
 huswif.std<-sweep(huswif,2,std,FUN="/")
 dis<-dist(huswif.std)
 dis.matrix<-dist2full(dis)

@@ -1,4 +1,4 @@
-usair.dat<-source("c:\\allwork\\rsplus\\chap3usair.dat")$value
+usair.dat<-source(paste(getwd(), "/Data/chap3usair.dat", sep = ""))$value
 #
 #
 attach(usair.dat)

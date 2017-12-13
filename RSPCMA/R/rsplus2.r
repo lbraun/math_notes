@@ -1,11 +1,11 @@
-airpoll<-source("c:\\allwork\\rsplus\\chap2airpoll.dat")$value
+airpoll<-source("/Users/lucasbraun/Google Drive/Grad School/2017 Applied Mathematics/RSPCMA/Data/chap2airpoll.dat")$value
 #
 #
 attach(airpoll)
 #
 #
 #
-par(mfrow=c(2,2,))
+par(mfrow=c(2,2))
 par(pty="s")
 plot(SO2,Mortality,pch=1,lwd=2)
 title("(a)",lwd=2)
@@ -28,7 +28,7 @@ text(SO2,Mortality,labels=names,lwd=2)
 #
 dev.off()
 #
-par(fig=c(0,0.7,0,0.7))
+par(fig=c(0,0.7,0,0.7)) # Plots the graph in the south-west corner of the canvas
 plot(SO2,Mortality,lwd=2)
 abline(lm(Mortality~SO2),lwd=2)
 lines(lowess(SO2,Mortality),lwd=2)
@@ -48,6 +48,7 @@ cor(SO2[-hull],Mortality[-hull])
 #
 dev.off()
 #
+# Get chiplot function from functions.txt
 chiplot(SO2,Mortality,vlabs=c("SO2","Mortality"))
 #
 dev.off()

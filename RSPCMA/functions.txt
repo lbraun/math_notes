@@ -1,3 +1,6 @@
+# Load this using the following command:
+# source(paste(getwd(), "/functions.txt", sep=""))
+
 chisplot <- function(x) {
     if (!is.matrix(x)) stop("x is not a matrix")
 
@@ -16,7 +19,7 @@ chisplot <- function(x) {
     quant <- qchisq(index,p)
     plot(quant, sort(di), ylab = "Ordered distances",
          xlab = "Chi-square quantile", lwd=2,pch=1)
-   
+
 }
 
 bivden<-function(x, y, ngridx = 30, ngridy = 30, constant.x = 1, constant.y = 1) {
@@ -86,7 +89,7 @@ chi<-(ind-ind1*ind2)/sqrt(ind1*(1-ind1)*ind2*(1-ind2))
 #
 lambda<-4*s*pmax((ind1-0.5)^2,(ind2-0.5)^2)
 thresh<-4*(1/(n-1)-0.5)^2
-# 
+#
 #
 if(matrix=="NO") {
 par(mfrow=c(1,2))
