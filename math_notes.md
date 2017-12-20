@@ -1,7 +1,33 @@
-# NOTES.md
+# SIW004 NOTES
 
-## 2017-12-13
+## December 20, 2017
+- What is a big matrix? 1000 columns might be hard to work with.
+- How to reduce the number of dimentions of your data?
 
+### Principal Compenents Analysis (PCA)
+- Transform original data (x1, x2, ..., xq) into principal components (y1, y2, ..., yq)
+- Variables are derived in decreasing order of importance
+- How to derive these y values? `y1 = a11 * x1 + a12 * x2 + ... + a1q * xq`
+  - With the condition `a'j * aj = 1` and `a'j * ai = 0` when `i < j`
+- One variable gets most of the variance means it holds most of the information from the original values
+- "S" is the variance-covariance matrix
+- Is always square
+- This is good because we can only do PCA on square matrixes
+- Eigenvalues and eigenvectors--- ???
+  - Every time you have a covariance matrix, we can obtain eigenvalues and eigenvectors
+  - There will be one eigenvalue for each dimention of the matrix
+  - There will be one eigenvector for each eigenvalue
+- Stopping rule:
+  - After you are representing 70 percent of the variation
+
+#### Example
+- Follow rsplus3.r
+- Use `princomp` method to perform PCA
+- Look at the summary to see which components can me ignored (after the third the "cumulitive proportion" is higher than 70 percent)
+- `⊥` signifies independence
+
+
+## December 13, 2017
 - Late by 10 minutes
 - Review: chi plot shows correllation between two values
 - Homework:
@@ -34,7 +60,7 @@
 
 
 
-## 2017-12-07
+## December 7, 2017
 - First exercise on Wednesday: will be based on first two chapters
 - One way to access columns in a dataset: `<dataset>$<column_name>`
 - Another way: `<dataset>[,<column_index>]`
@@ -88,7 +114,7 @@ Chiplot
   - If the values are within the two lines, the values are independent
   - This is called the confidence interval
 
-## 2017-12-04
+## December 4, 2017
 - Vector of means: single "row" with mean of each column
 - Variance covarience matrix: shows if relationships are linear or inverse
   - R syntax: var(<matrix>)
@@ -103,7 +129,7 @@ Chiplot
     - For efficiency, outputs only half of a matrix (lower triangle matrix) because output would be symetric
     - Can use function `dist2full` from "functions.txt"
 
-## 2017-11-30
+## November 30, 2017
 Classic matrixes
 
 Variables can hold anything
